@@ -1,0 +1,111 @@
+<div class="home-page">
+    <h2>Bienvenue sur notre application</h2>
+
+    <p>
+        Avec notre application vous allez pouvoir formuler vos propres recettes de savon
+        en utilisant la saponification à froid.
+    </p>
+
+    <div class="container row mb-4">
+        <div class="col-12 col-lg-5 text-center py-4 ms-4">
+            <img    src="./logos/Logo-Sav-App-02.jpeg"
+            alt="Logo standard de la société ADEPRO"
+            style="width: 300px; box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);">
+        </div>
+    
+        <div class="col-12 col-lg-5 text-center py-4 ms-0">
+            <img    src="./backgrounds/fond-01.jpeg"
+            alt="Logo standard de la société ADEPRO"
+            style="width: 300px; box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);">
+        </div>
+    </div>
+
+    <p>
+        Vous pouvez calculer des recettes avec la rubrique <a routerLink="/recipe-calculator"><b>"Calculateur"</b></a>.
+        Mais vous pourrez également sauvegarder vos recettes pour les retrouver ultérieurement en vous inscrivant.
+    </p>
+
+    <p>
+        Ce site vous est mis à disposition par la société <b>ADEPRO</b>.
+    </p>
+    
+    <div class="text-center mt-3 mb-4">
+        <img    src="./logos/adepro_logo_trans.png"
+        alt="Logo standard de la société ADEPRO"
+        style="width: 200px;">
+    </div>
+
+    <p>
+        Découvrez en plus à notre sujet en consultant la rubrique <a routerLink="/about"><b>"A propos"</b></a>.
+    </p>    
+</div>
+
+<div class="container mt-5">
+
+  <!-- HERO -->
+  <div class="p-5 mb-4 bg-success bg-opacity-10 rounded-3 border border-success-subtle">
+    <div class="text-center">
+      <h1 class="display-5 fw-bold text-success">🧼 SavApp</h1>
+      <p class="col-md-8 fs-5 mx-auto text-muted">
+        Calculez, créez et gérez vos recettes de savon artisanal avec précision.
+        SavApp vous accompagne dans chaque étape de la saponification.
+      </p>
+      <div class="d-flex gap-3 justify-content-center mt-4">
+        <a routerLink="/recipe-calculator" class="btn btn-success btn-lg">
+          <i class="bi bi-calculator"></i> Calculer une recette
+        </a>
+        <a routerLink="/recipe-manager" class="btn btn-outline-success btn-lg">
+          <i class="bi bi-journal-text"></i> Mes recettes
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONCTIONNALITES -->
+  <div class="row mt-4 g-4">
+
+    <div class="col-md-4">
+      <div class="card h-100 border-success-subtle shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-calculator fs-1 text-success"></i>
+          <h5 class="card-title mt-3">Calculateur</h5>
+          <p class="card-text text-muted">
+            Sélectionnez vos huiles, définissez les quantités et calculez automatiquement
+            les caractéristiques de votre savon.
+          </p>
+          <a routerLink="/recipe-calculator" class="btn btn-sm btn-success">Accéder</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 border-success-subtle shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-journal-text fs-1 text-success"></i>
+          <h5 class="card-title mt-3">Mes Recettes</h5>
+          <p class="card-text text-muted">
+            Retrouvez toutes vos recettes sauvegardées, consultez leurs scores
+            et gérez votre bibliothèque de savons.
+          </p>
+          <a routerLink="/recipe-manager" class="btn btn-sm btn-success">Accéder</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 border-success-subtle shadow-sm">
+        <div class="card-body text-center">
+          <i class="bi bi-flask fs-1 text-success"></i>
+          <h5 class="card-title mt-3">Ingrédients</h5>
+          <p class="card-text text-muted">
+            Consultez et gérez la base de données des corps gras disponibles
+            pour vos formulations de savon.
+          </p>
+          <a routerLink="/ingredients-manager" class="btn btn-sm btn-success">Accéder</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
