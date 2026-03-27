@@ -12,32 +12,33 @@ import { LegalNoticePages } from './pages/legal-notice-pages/legal-notice-pages'
 import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
-// Accès & redirection vers la page home :
-{ path: '', pathMatch: 'full', redirectTo: 'home' }, // Route de la racine :
-{ path: 'home', component: HomePage },
 
-// Pages d'authentification :
-{ path: 'login', component: LoginPage },
-{ path: 'subscribe', component: SubscribePage},
+  // Redirection de la racine vers home
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
 
-// Compte utilisateur :
-{ path: 'account',component: AccountManagerPage, canActivate: [authGuard] },
+  // Page d'accueil
+  { path: 'home', component: HomePage },
 
-// Recettes :
-{ path: 'recipe-calculator', component: RecipeCalculatorPage },
-{ path: 'recipe-manager', component: RecipeManagerPage, canActivate:
-[authGuard]},
+  // Pages d'authentification (publiques)
+  { path: 'login', component: LoginPage },
+  { path: 'subscribe', component: SubscribePage },
 
-// Administration - Gestion :
-{ path: 'users-manager', component: UsersManagerPage, canActivate: [authGuard]
-},
-{ path: 'ingredients-manager', component: IngredientsManagerPage, canActivate:
-[authGuard]},
+  // Compte utilisateur (protégé)
+  { path: 'account', component: AccountManagerPage, canActivate: [authGuard] },
 
-// A propos :
-{ path: "about", component: AboutPage },// Mentions légales :
-{path: "legal-notice", component: LegalNoticePages},
+  // Recettes
+  { path: 'recipe-calculator', component: RecipeCalculatorPage },
+  { path: 'recipe-manager', component: RecipeManagerPage, canActivate: [authGuard] },
 
-// Redirection par défaut vers home (en cas d'url invalide) :
-{path: '**', redirectTo: 'home'} // Toujours mis en dernier !
+  // Administration (protégées)
+  { path: 'users-manager', component: UsersManagerPage, canActivate: [authGuard] },
+  { path: 'ingredients-manager', component: IngredientsManagerPage, canActivate: [authGuard] },
+
+  // Informations
+  { path: 'about', component: AboutPage },
+  { path: 'legal-notice', component: LegalNoticePages },
+
+  // Redirection par défaut — toujours en dernier
+  { path: '**', redirectTo: 'home' },
+
 ];

@@ -1,1 +1,50 @@
-<p>account-manager-page works!</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Mon Compte</h4>
+                </div>
+
+                <div class="card-body">
+
+                    @if (userInfo) {
+
+                    <!-- Identifiant -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Identifiant</label>
+                        <p class="form-control-plaintext">{{ userInfo.username }}</p>
+                    </div>
+
+                    <!-- Rôles sous forme de badges -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Rôles</label>
+                        <div>
+                            @for (role of userInfo.roles; track role) {
+                            <span class="badge bg-primary me-1">{{ role }}</span>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Date d'expiration de la session -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Session valide jusqu'au</label>
+                        <p class="form-control-plaintext">{{ userInfo.expiration | date:'dd/MM/yyyy HH:mm' }}</p>
+                    </div>
+
+                    } @else {
+
+                    <!-- Aucune session active -->
+                    <div class="alert alert-warning text-center">
+                        Aucune session active. <a routerLink="/login">Se connecter</a>
+                    </div>
+
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
